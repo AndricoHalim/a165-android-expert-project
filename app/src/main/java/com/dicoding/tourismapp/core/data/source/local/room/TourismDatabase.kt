@@ -19,15 +19,15 @@ abstract class TourismDatabase : RoomDatabase() {
 
         fun getInstance(context: Context): TourismDatabase =
             INSTANCE ?: synchronized(this) {
-            val instance = Room.databaseBuilder(
-                context.applicationContext,
-                TourismDatabase::class.java,
-                "Tourism.db"
-            )
-                .fallbackToDestructiveMigration()
-                .build()
-            INSTANCE = instance
-            instance
-        }
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    TourismDatabase::class.java,
+                    "Tourism.db"
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
+                INSTANCE = instance
+                instance
+            }
     }
 }
